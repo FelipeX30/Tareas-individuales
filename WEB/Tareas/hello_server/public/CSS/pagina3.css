@@ -1,0 +1,53 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 2px solid black;
+}
+
+html{
+    background-color: #ff78cd;
+}
+
+body{
+    background-color: #ff33e0;
+    margin: 20px;
+    padding: 10px;
+}
+
+
+h1{
+    color:blue;
+    margin : 10px;
+    padding: 10px;
+}
+
+a{
+    margin: 15px;
+    padding: 10px;
+}
+
+.div_style{
+
+    margin: 20px;
+    padding: 30px;
+    border-radius: 50px;
+}
+
+#css_cheat_sheet{
+    background-color: #ffad3a;
+    margin: 20px;
+    padding: 10px;
+    color: rgb(92, 97, 255);
+    border-radius: 50px;
+}
+
+#button_style{
+    background-color: #ffff00;
+
+
+}
+
+#button_style button{
+    font-size: 2em;
+    border-radius: 10px;
+    background-color: #00ff00;
+}
