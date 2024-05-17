@@ -27,16 +27,61 @@ public class SimonController : MonoBehaviour
     [SerializeField] Transform buttonParent;
     public Text scoreText;
 
+    public string apiData = @"
+    {
+        ""buttons"": [
+            {
+                ""id"": 0,
+                ""r"": 1.0,
+                ""g"": 0.0,
+                ""b"": 0.5
+            },
+            {
+                ""id"": 1,
+                ""r"": 0.0,
+                ""g"": 1.0,
+                ""b"": 0.5
+            },
+            {
+                ""id"": 2,
+                ""r"": 0.0,
+                ""g"": 0.5,
+                ""b"": 1.0
+            },
+            {
+                ""id"": 3,
+                ""r"": 1.0,
+                ""g"": 1.0,
+                ""b"": 0.0
+            }
+
+        ]
+    }
+    ";
+
+[SerializeField] ColorButtons allButtons;
+
     // Start is called before the first frame update
     void Start()
     {
         // Configure the buttons to be used in the game
-        PrepareButtons();
+        GetComponent<APIConection>().GetData();
     }
 
     // Configure the callback functions for the buttons
-    void PrepareButtons()
+    public void PrepareButtons()
     {
+        allButtons = JsonUtility.FromJson<ColorButtons>(apiData);
+
+        foreach (ColorButton buttonData in allButtons.buttons)
+        {
+            GameObject newButton = Instantiate(buttonPrefab, buttonParent);
+            newButton.GetComponent<Image>().color = new Color(buttonData.r, buttonData.g, buttonData.b);
+            newButton.GetComponent<SimonButton>().Init(buttonData.id);
+            newButton.GetComponent<Button>().onClick.AddListener(() => ButtonPressed(buttonData.id));
+            buttons.Add(newButton.GetComponent<SimonButton>());
+            
+        }/*
         for (int i=0; i<numBottons; i++) {
             int index = i;
             GameObject newButton = Instantiate(buttonPrefab, buttonParent);
@@ -45,6 +90,7 @@ public class SimonController : MonoBehaviour
             buttons.Add(newButton.GetComponent<SimonButton>());
             buttons[i].gameObject.GetComponent<Button>().onClick.AddListener(() => ButtonPressed(index));
         }
+        */
         // Start the game by adding the first button
         AddToSequence();
     }
