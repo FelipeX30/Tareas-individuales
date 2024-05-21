@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background: #d60808;
+    color: #515151;
+}
+
+.property {
+    background: rgb(239, 255, 132);
+    margin: 10px 0;
+    padding: 20px;
+    border: 1px solid #97f8ff;
+}
+
+.example {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #b2abf2;
+}
+
+
+#borderExample {
+    border: 2px solid red;
+}
+
+#borderSidesExample {
+    border-left: 4px solid red;
+    border-right: 4px solid blue;
+    border-top: 2px dashed green;
+    border-bottom: 2px dotted black;
+}
+
+#borderRadiusExample {
+    border: 2px solid purple;
+    border-radius: 10px;
+}
+
+#backgroundImageExample {
+    background-image: url('https://www.diariomotor.com/imagenes/2013/05/ferrari-laferrari-vista-frontal-503009.jpg');
+    height: 100px;
+    width: 200px;
+    background-size: cover;
+}
+
+#colorExample {
+    color: blue;
+}
+
+#fontExample {
+    font: italic bold 16px/1.3 Georgia, serif;
+}
+
+#fontFamilyExample {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#fontStyleWeightExample {
+    font-style: italic;
+    font-weight: bold;
+}
+
+#widthHeightExample {
+    width: 200px;
+    height: 100px;
+    background-color: #f765ff;
+}
+
+#listStyleExample {
+    list-style-type: square;
+}
+
+#marginExample {
+    margin: 20px;
+    background-color: #e1ff00;
+}
+
+#paddingExample {
+    padding: 30px;
+    background-color: #84e6ff;
+}
+
+#overflowExample {
+    overflow: scroll;
+    height: 100px;
+    background-color: #ff4747;
+}
+
+#displayExample {
+    .container {
+        border: 2px solid #ccc;
+        padding: 10px;
+    }
+    
+    .inline-block-example {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        background-color: #ff6868;
+        vertical-align: top; 
+        text-align: center;
+        line-height: 100px; 
+        font-size: 16px;
+        color: #1e00ff;
+    }
+    
+}
+
+#positionFixedExample {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    width: 200px;
+    height: 50px;
+    background-color: #4CAF50; 
+    text-align: center;
+    line-height: 50px;
+    border-radius: 10px; 
+}
+
+
+#filterExample {
+    filter: blur(2px);
+}
